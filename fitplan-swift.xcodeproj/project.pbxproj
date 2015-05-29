@@ -13,6 +13,7 @@
 		3485B36C1B18DE6D00B417D4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3485B36B1B18DE6D00B417D4 /* Images.xcassets */; };
 		3485B36F1B18DE6D00B417D4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3485B36D1B18DE6D00B417D4 /* LaunchScreen.xib */; };
 		3485B37B1B18DE6D00B417D4 /* fitplan_swiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3485B37A1B18DE6D00B417D4 /* fitplan_swiftTests.swift */; };
+		7B3077C3474667C6B873EF87 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D8E7BE096C88DC127E92E26 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,9 @@
 		3485B3741B18DE6D00B417D4 /* fitplan-swiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "fitplan-swiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3485B3791B18DE6D00B417D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3485B37A1B18DE6D00B417D4 /* fitplan_swiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fitplan_swiftTests.swift; sourceTree = "<group>"; };
+		64D4F62E70182FA0E5946EFD /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		7AE502848DFBFA9B5C8424A0 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		9D8E7BE096C88DC127E92E26 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B3077C3474667C6B873EF87 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +67,8 @@
 				3485B3611B18DE6D00B417D4 /* fitplan-swift */,
 				3485B3771B18DE6D00B417D4 /* fitplan-swiftTests */,
 				3485B3601B18DE6D00B417D4 /* Products */,
+				469D392D5B86338F5D0A3853 /* Pods */,
+				827AE4617125DD313EE3B166 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,6 +119,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		469D392D5B86338F5D0A3853 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7AE502848DFBFA9B5C8424A0 /* Pods.debug.xcconfig */,
+				64D4F62E70182FA0E5946EFD /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		827AE4617125DD313EE3B166 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9D8E7BE096C88DC127E92E26 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -119,9 +143,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3485B37E1B18DE6D00B417D4 /* Build configuration list for PBXNativeTarget "fitplan-swift" */;
 			buildPhases = (
+				25167C846B9666AE52EBC9FE /* Check Pods Manifest.lock */,
 				3485B35B1B18DE6D00B417D4 /* Sources */,
 				3485B35C1B18DE6D00B417D4 /* Frameworks */,
 				3485B35D1B18DE6D00B417D4 /* Resources */,
+				C05502B2257405E415843634 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -206,6 +232,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		25167C846B9666AE52EBC9FE /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C05502B2257405E415843634 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3485B35B1B18DE6D00B417D4 /* Sources */ = {
@@ -338,6 +397,7 @@
 		};
 		3485B37F1B18DE6D00B417D4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7AE502848DFBFA9B5C8424A0 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "fitplan-swift/Info.plist";
@@ -348,6 +408,7 @@
 		};
 		3485B3801B18DE6D00B417D4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64D4F62E70182FA0E5946EFD /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "fitplan-swift/Info.plist";
@@ -409,6 +470,7 @@
 				3485B3801B18DE6D00B417D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3485B3811B18DE6D00B417D4 /* Build configuration list for PBXNativeTarget "fitplan-swiftTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +479,7 @@
 				3485B3831B18DE6D00B417D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
